@@ -1,60 +1,61 @@
 import Logo from "../assets/Site Assets/Logo.png"
 import DefaultPFP from "../assets/Site Assets/DefaultUserPhoto.png"
 
-function SideBar()
-{
+function SideBar() {
   return (
     <>
-      <div className="h-dvh bg-[#0A0A0F] w-64 flex flex-col">
 
-        <div  className="h-25 pl-4 ">
+      <div className="h-dvh bg-[#0A0A0F] w-64 flex flex-col font-sans">
+
+        <div className="h-25 pl-4 pr-4 flex items-center">
           <div className="flex">
-            <div className="h-10 w-10 pt-7.5"><img src={Logo} alt="Logo" /></div>
-            <div className="flex flex-col pt-6 pl-2">
-              <div className="text-[#ffffff] text-[24px] font-bold ">ERS Hive</div>
-              <div className="text-white text-[12px]">Inventory</div>
+            <div className="h-10 w-10"><img src={Logo} alt="Logo" className="object-contain rounded-lg" /></div>
+            <div className="flex flex-col pl-2">
+              <div className="text-[#ffffff] text-[24px] font-bold leading-none">ERS Hive</div>
+              <div className="text-gray-400 text-[12px] uppercase tracking-widest font-semibold mt-1">Inventory</div>
             </div>
           </div>
         </div>
-
-        <div className="h-18 pl-4 border-t border-gray-700 flex">
-          <div className="flex pt-4">
-            <div className="h-10 w-10"><img src={DefaultPFP} alt="pfp" /></div>
-          </div>
-          <div className="flex flex-col pl-2 pt-4">
-            <div className="text-[#ffffff] text-[18px]">John Doe</div>
-            <div className="text-[#ffffff] text-[12px]">25BEC004</div>
+        <div className="h-18 pl-4 pr-4 border-t border-gray-800 flex items-center">
+          <div className="flex">
+            <div className="h-10 w-10"><img src={DefaultPFP} alt="pfp" className="rounded-full object-cover" /></div>
+            <div className="flex flex-col pl-2">
+              <div className="text-[#ffffff] text-[18px] font-medium leading-tight">John Doe</div>
+              
+              <div className="text-gray-400 text-[12px] font-mono mt-0.5">25BEC004</div>
+            </div>
           </div>
         </div>
-        <hr></hr>
-
-        <div className="text-[#FFFFFF] text-[16px] pl-4 border-t border-gray-700">
-          <a href="#Dashboard" className="flex h-10 pt-4 ">
+        <div className="text-[#FFFFFF] text-[16px] pl-4 pr-4 pt-4 border-t border-gray-800 font-mono flex-1 space-y-2">
+          
+          <a href="#Dashboard" className="flex items-center h-10 px-3 rounded-lg outline-none focus:border focus:border-[#FFCC00] focus:text-[#FFCC00] hover:bg-gray-800/50 transition-colors">
             <div>Dashboard</div>
           </a>
-          <a href="#components" className="flex h-10 pt-4">
+          <a href="#components" className="flex items-center h-10 px-3 rounded-lg outline-none focus:border focus:border-[#FFCC00] focus:text-[#FFCC00] hover:bg-gray-800/50 transition-colors">
             <div>Components</div>
           </a>
-          <a href="#tools" className="flex h-10 pt-4">
+          <a href="#tools" className="flex items-center h-10 px-3 rounded-lg outline-none focus:border focus:border-[#FFCC00] focus:text-[#FFCC00] hover:bg-gray-800/50 transition-colors">
             <div>Tools</div>
           </a>
-          <a href="#History" className="flex h-10 pt-4">
+          <a href="#History" className="flex items-center h-10 px-3 rounded-lg outline-none focus:border focus:border-[#FFCC00] focus:text-[#FFCC00] hover:bg-gray-800/50 transition-colors">
             <div>History</div>
           </a>
-          <a href="#reports" className="flex h-10 pt-4">
+          <a href="#reports" className="flex items-center h-10 px-3 rounded-lg outline-none focus:border focus:border-[#FFCC00] focus:text-[#FFCC00] hover:bg-gray-800/50 transition-colors">
             <div>Reports</div>
           </a>
-          <a href="#notifications" className="flex h-10 pt-4">
+          <a href="#notifications" className="flex items-center h-10 px-3 rounded-lg outline-none focus:border focus:border-[#FFCC00] focus:text-[#FFCC00] hover:bg-gray-800/50 transition-colors">
             <div>Notifications</div>
           </a>
+          
         </div>
 
-        <div className=" pl-4 h-18 flex items-center text-red-600 border-t border-gray-700 mt-auto">
-          <div>Log Out</div>
+        <div className="pl-4 h-18 flex items-center text-white border-t border-gray-800 mt-auto hover:text-red-600 transition-colors cursor-pointer">
+          <div className="text-[16px] font-medium px-3">Log Out</div>
         </div>
 
       </div>
     </>
   )
 }
-export default SideBar
+
+export default SideBar;
