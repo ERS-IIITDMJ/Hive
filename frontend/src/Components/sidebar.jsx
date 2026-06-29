@@ -19,7 +19,6 @@ const navItems = [
   { key: "notifications", label: "Notifications", icon: Bell },
 ];
 
-// Small EH (ERS Hive) brand tile
 const ErsLogo = ({ size = 42 }) => (
   <div
     className="shrink-0 rounded-md bg-yellow-400 flex items-center justify-center"
@@ -38,7 +37,7 @@ const ErsLogo = ({ size = 42 }) => (
 const Sidebar = ({ active = "notifications", mobileOpen = false, onClose }) => {
   return (
     <>
-      {/* Mobile backdrop */}
+    
       {mobileOpen && (
         <div
           className="lg:hidden fixed inset-0 z-40 bg-black/70 backdrop-blur-sm"
@@ -51,7 +50,7 @@ const Sidebar = ({ active = "notifications", mobileOpen = false, onClose }) => {
           mobileOpen ? "translate-x-0" : "-translate-x-full"
         } lg:translate-x-0`}
       >
-        {/* Brand */}
+     
         <div className="flex items-center gap-3 px-5 py-5 border-b border-yellow-400/10">
           <ErsLogo size={42} />
           <div className="leading-tight flex-1 min-w-0">
@@ -71,7 +70,6 @@ const Sidebar = ({ active = "notifications", mobileOpen = false, onClose }) => {
           </button>
         </div>
 
-        {/* Nav */}
         <nav className="flex-1 px-3 py-5 space-y-1 overflow-y-auto">
           {navItems.map((item) => {
             const Icon = item.icon;
@@ -95,7 +93,7 @@ const Sidebar = ({ active = "notifications", mobileOpen = false, onClose }) => {
           })}
         </nav>
 
-        {/* Logout */}
+  
         <div className="px-3 py-4 border-t border-yellow-400/10">
           <button className="w-full flex items-center gap-3 px-3.5 py-2.5 rounded-md text-[13.5px] font-medium text-gray-400 hover:bg-red-500/10 hover:text-red-400 transition-colors">
             <LogOut size={17} />
@@ -106,5 +104,4 @@ const Sidebar = ({ active = "notifications", mobileOpen = false, onClose }) => {
     </>
   );
 };
-
 export default Sidebar;

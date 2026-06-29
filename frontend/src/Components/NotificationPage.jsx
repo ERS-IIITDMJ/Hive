@@ -6,7 +6,6 @@ import NotificationComponent, {
   NOTIFICATION_TYPES,
 } from "./notificationComponent";
 
-// Mock notifications (replace with API later)
 const initialNotifications = [
   {
     id: "n1",
@@ -105,10 +104,10 @@ const NotificationPage = () => {
         />
 
         <div className="flex-1 min-w-0 flex flex-col">
-          {/* Top bar */}
+          
           <header className="sticky top-0 z-30 bg-black/90 backdrop-blur-md border-b border-yellow-400/10">
             <div className="flex items-center gap-3 px-4 sm:px-6 lg:px-8 h-16">
-              {/* Hamburger (mobile) */}
+        
               <button
                 className="lg:hidden p-2 -ml-2 rounded-md text-gray-300 hover:text-yellow-400 hover:bg-yellow-400/10 transition-colors"
                 onClick={() => setMobileMenuOpen(true)}
@@ -117,14 +116,14 @@ const NotificationPage = () => {
                 <Menu size={22} />
               </button>
 
-              {/* Search (desktop) */}
+            
               <div className="hidden lg:flex flex-1 max-w-xl">
                 <SearchBar />
               </div>
 
               <div className="flex-1 lg:hidden" />
 
-              {/* Bell */}
+    
               <button
                 className="relative p-2 rounded-full text-yellow-400 hover:bg-yellow-400/10 transition-colors"
                 aria-label="Notifications"
@@ -139,9 +138,8 @@ const NotificationPage = () => {
             </div>
           </header>
 
-          {/* Main content */}
           <main className="flex-1 px-4 sm:px-6 lg:px-10 py-6 sm:py-8 lg:py-10">
-            {/* Page header */}
+            
             <div className="flex items-start sm:items-center justify-between gap-4 mb-6 sm:mb-8">
               <div>
                 <h1 className="text-2xl sm:text-3xl font-bold text-white tracking-tight">
@@ -165,7 +163,6 @@ const NotificationPage = () => {
               </button>
             </div>
 
-            {/* List */}
             {notifications.length === 0 ? (
               <div className="flex flex-col items-center justify-center py-24 text-center">
                 <div className="w-16 h-16 rounded-full bg-yellow-400/10 flex items-center justify-center mb-4">
@@ -197,5 +194,4 @@ const NotificationPage = () => {
     </div>
   );
 };
-
 export default NotificationPage;
