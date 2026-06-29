@@ -3,6 +3,7 @@ import Sidebar from './Components/sidebar';
 import SearchBar from './Components/searchBar';
 import notificationComponent from './Components/notificationComponent';
 import LoginPage from './Components/loginPage';
+import ToolsPage from './Components/ToolsPage';
 
 function App() {
   return (
