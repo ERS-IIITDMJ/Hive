@@ -7,7 +7,6 @@ import {
   BarChart3,
   Bell,
   LogOut,
-  ChevronLeft,
 } from "lucide-react";
 
 const navItems = [
@@ -20,133 +19,52 @@ const navItems = [
 ];
 
 const ErsLogo = ({ size = 42 }) => (
-  <div
-    className="shrink-0 rounded-md bg-yellow-400 flex items-center justify-center"
-    style={{ width: size, height: size }}
-    aria-label="ERS Hive"
-  >
-    <span
-      className="font-black text-black tracking-tight"
-      style={{ fontSize: size * 0.45, lineHeight: 1 }}
-    >
-      EH
-    </span>
+  <div className="shrink-0 rounded-md bg-yellow-400 flex items-center justify-center" style={{ width: size, height: size }}>
+    <span className="font-black text-black tracking-tight" style={{ fontSize: size * 0.45, lineHeight: 1 }}>EH</span>
   </div>
 );
 
-const Sidebar = ({ active = "notifications", mobileOpen = false, onClose }) => {
+const Sidebar = ({ active = "notifications" }) => {
   return (
-    <>
-    
-      {mobileOpen && (
-        <div
-          className="lg:hidden fixed inset-0 z-40 bg-black/70 backdrop-blur-sm"
-          onClick={onClose}
-        />
-      )}
-
-<<<<<<< HEAD
-      <aside
-        className={`fixed lg:sticky top-0 left-0 z-50 h-screen w-64 shrink-0 bg-[#0a0a0a] border-r border-yellow-400/15 flex flex-col transition-transform duration-200 ${
-          mobileOpen ? "translate-x-0" : "-translate-x-full"
-        } lg:translate-x-0`}
-      >
-     
-        <div className="flex items-center gap-3 px-5 py-5 border-b border-yellow-400/10">
-          <ErsLogo size={42} />
-          <div className="leading-tight flex-1 min-w-0">
-            <p className="text-white font-semibold text-[15px] tracking-wide">
-              ERS Hive
-            </p>
-            <p className="text-yellow-400/70 text-[10px] tracking-[0.2em] uppercase mt-0.5">
-              Inventory
-            </p>
-          </div>
-          <button
-            className="lg:hidden text-gray-400 hover:text-yellow-400 p-1"
-            onClick={onClose}
-            aria-label="Close menu"
-          >
-            <ChevronLeft size={18} />
-          </button>
-=======
-      <div className="h-dvh bg-surface w-64 flex flex-col font-sans">
-
-        <div className="h-25 pl-4 pr-4 flex items-center">
-          <div className="flex">
-            <div className="h-10 w-10"><img src={Logo} alt="Logo" className="object-contain rounded-lg" /></div>
-            <div className="flex flex-col pl-2">
-              <div className="text-[#ffffff] text-[24px] font-bold leading-none">ERS Hive</div>
-              <div className="text-gray-400 text-[12px] uppercase tracking-widest font-semibold mt-1">Inventory</div>
-            </div>
+    <aside className="w-64 h-full bg-[#0b0a0d] border-r border-[#3f3f46]/20 flex flex-col justify-between p-4 shrink-0 select-none">
+      <div className="flex flex-col space-y-6">
+        <div className="flex items-center space-x-3 px-2 py-1">
+          <ErsLogo />
+          <div>
+            <h1 className="text-white font-bold text-sm leading-tight">ERS Hive</h1>
+            <p className="text-[10px] text-gray-500 font-semibold tracking-wider uppercase">Inventory</p>
           </div>
         </div>
-        <div className="h-18 pl-4 pr-4 border-t border-gray-800 flex items-center">
-          <div className="flex">
-            <div className="h-10 w-10"><img src={DefaultPFP} alt="pfp" className="rounded-full object-cover" /></div>
-            <div className="flex flex-col pl-2">
-              <div className="text-[#ffffff] text-[18px] font-medium leading-tight">John Doe</div>
-              
-              <div className="text-gray-400 text-[12px] font-mono mt-0.5">25BEC004</div>
-            </div>
-          </div>
-        </div>
-        <div className="text-heading text-[16px] pl-4 pr-4 pt-4 border-t border-gray-800 font-mono flex-1 space-y-2">
-          
-          <a href="#Dashboard" className="flex items-center h-10 px-3 rounded-lg outline-none focus:border focus:border-[#FFCC00] focus:text-[#FFCC00] hover:bg-gray-800/50 transition-colors">
-            <div>Dashboard</div>
-          </a>
-          <a href="#components" className="flex items-center h-10 px-3 rounded-lg outline-none focus:border focus:border-[#FFCC00] focus:text-[#FFCC00] hover:bg-gray-800/50 transition-colors">
-            <div>Components</div>
-          </a>
-          <a href="#tools" className="flex items-center h-10 px-3 rounded-lg outline-none focus:border focus:border-[#FFCC00] focus:text-[#FFCC00] hover:bg-gray-800/50 transition-colors">
-            <div>Tools</div>
-          </a>
-          <a href="#History" className="flex items-center h-10 px-3 rounded-lg outline-none focus:border focus:border-[#FFCC00] focus:text-[#FFCC00] hover:bg-gray-800/50 transition-colors">
-            <div>History</div>
-          </a>
-          <a href="#reports" className="flex items-center h-10 px-3 rounded-lg outline-none focus:border focus:border-[#FFCC00] focus:text-[#FFCC00] hover:bg-gray-800/50 transition-colors">
-            <div>Reports</div>
-          </a>
-          <a href="#notifications" className="flex items-center h-10 px-3 rounded-lg outline-none focus:border focus:border-[#FFCC00] focus:text-[#FFCC00] hover:bg-gray-800/50 transition-colors">
-            <div>Notifications</div>
-          </a>
-          
->>>>>>> upstream/main
-        </div>
 
-        <nav className="flex-1 px-3 py-5 space-y-1 overflow-y-auto">
+        <nav className="flex flex-col space-y-1">
           {navItems.map((item) => {
             const Icon = item.icon;
-            const isActive = item.key === active;
+            const isActive = active === item.key;
             return (
               <button
                 key={item.key}
-                className={`relative w-full flex items-center gap-3 px-3.5 py-2.5 rounded-md text-[13.5px] font-medium transition-colors duration-150 ${
+                className={`w-full flex items-center space-x-3 px-3 py-2.5 rounded-lg text-xs font-semibold transition-all duration-200 ${
                   isActive
-                    ? "bg-yellow-400/10 text-yellow-400"
-                    : "text-gray-400 hover:bg-yellow-400/5 hover:text-yellow-300"
+                    ? "bg-[#facc15] text-black shadow-md shadow-[#facc15]/10"
+
+                    : "text-gray-400 hover:bg-[#facc15]/10 hover:text-[#facc15]"
                 }`}
               >
-                {isActive && (
-                  <span className="absolute left-0 top-1.5 bottom-1.5 w-[3px] rounded-r bg-yellow-400" />
-                )}
-                <Icon size={17} strokeWidth={2} />
+                <Icon size={16} />
                 <span>{item.label}</span>
               </button>
             );
           })}
         </nav>
+      </div>
 
-  
-        <div className="px-3 py-4 border-t border-yellow-400/10">
-          <button className="w-full flex items-center gap-3 px-3.5 py-2.5 rounded-md text-[13.5px] font-medium text-gray-400 hover:bg-red-500/10 hover:text-red-400 transition-colors">
-            <LogOut size={17} />
-            <span>Logout</span>
-          </button>
-        </div>
-      </aside>
-    </>
+      <div className="px-2 py-2 border-t border-zinc-900">
+        <button className="w-full flex items-center gap-3 px-3 py-2.5 rounded-lg text-xs font-semibold text-gray-400 hover:bg-red-500/10 hover:text-red-400 transition-all duration-200">
+          <LogOut size={16} />
+          <span>Logout</span>
+        </button>
+      </div>
+    </aside>
   );
 };
 export default Sidebar;
