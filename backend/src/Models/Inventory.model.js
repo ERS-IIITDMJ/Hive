@@ -1,6 +1,6 @@
-import mongoose from 'mongoose ';
+import mongoose from 'mongoose';
 
-const inventorySchema = new mongoose.schema({
+const inventorySchema = new mongoose.Schema({
   name : {type : String , required:true},
   image : {type : String , required : true},
   description : {type:String , required : true},
@@ -8,8 +8,8 @@ const inventorySchema = new mongoose.schema({
   totalQuantity : {type:Number , required : true},
   availableQuantity : {type:Number , required : true},
   damagedQuantity : {type:Number, required : true},
-  storageId : {type:mongoose.schema.types.ObjectId , ref : 'storage'}
+  storageId : {type:mongoose.Schema.Types.ObjectId , ref : 'storage'}
 
 });
 
-export default mongoose.schema('inventory',inventorySchema)
+export default mongoose.model('inventory',inventorySchema)
