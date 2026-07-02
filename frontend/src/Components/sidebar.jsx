@@ -80,9 +80,8 @@ function SideBar() {
           }
         </div>
 
-      </div>
-    </>
-  )
-}
-
-export default SideBar;
+       </div>  
+       </>
+  );
+};
+export default Sidebar;
