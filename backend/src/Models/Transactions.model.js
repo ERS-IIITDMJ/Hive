@@ -6,7 +6,14 @@ const transactionSchema = new mongoose.Schema ({
   issuedOn : {type:Date, required:true},
   returnDate : {type:Date , required:true},
   status : {type:String , required:true},
-  items : [{type:mongoose.Schema.Types.ObjectId, ref:'inventory'}]
+  items : [
+    {
+      item: { type: mongoose.Schema.Types.ObjectId, ref: 'inventory', required: true},
+      quantity: { type: Number, required: true },
+      damagedQuantity: { type: Number, default: 0 },
+      remarks: { type: String }
+    }
+  ]
 
 })
 
