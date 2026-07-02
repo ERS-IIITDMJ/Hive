@@ -3,9 +3,10 @@ import Sidebar from './Components/sidebar';
 import SearchBar from './Components/searchBar';
 import NotificationComponent from './Components/notificationComponent';
 import LoginPage from './Components/loginPage';
+import ReportPage from './Components/report';
 
 function App() {
-  const [isLogin, setisNotLogin] = useState(true)
+  const [isLogin, setisNotLogin] = useState(false)
   return (
     <>
       {!isLogin ? <LoginPage /> :
@@ -13,6 +14,7 @@ function App() {
           <Sidebar />
           <div className="flex-1 flex flex-col items-start bg-surface overflow-y-auto">
             <SearchBar />
+            <ReportPage/>
           </div>
         </div>
       }
